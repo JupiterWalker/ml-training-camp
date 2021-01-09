@@ -6,7 +6,7 @@ compile_flags = ['-std=c++11',  '-fopenmp']
 linker_flags = ['-fopenmp']
 
 module = Extension('target_encoding_v2',
-                   ['hello.pyx'],
+                   ['target_encoding_v2.pyx'],
                    language='c++',
                    # include_dirs=[numpy.get_include()],  # This helps to create numpy
                    extra_compile_args=compile_flags,

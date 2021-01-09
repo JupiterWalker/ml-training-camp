@@ -1,19 +1,19 @@
 from distutils.core import setup, Extension
 from Cython.Build import cythonize
-import numpy
+# import numpy
 
 compile_flags = ['-std=c++11',  '-fopenmp']
 linker_flags = ['-fopenmp']
 
-module = Extension('hello',
+module = Extension('target_encoding_v2',
                    ['hello.pyx'],
                    language='c++',
-                   include_dirs=[numpy.get_include()],  # This helps to create numpy
+                   # include_dirs=[numpy.get_include()],  # This helps to create numpy
                    extra_compile_args=compile_flags,
                    extra_link_args=linker_flags)
 
 setup(
-    name='hello',
+    name='target_encoding_v2',
     ext_modules=cythonize(module),
     gdb_debug=True  # This is extremely dangerous; Set it to False in production.
 )
